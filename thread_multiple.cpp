@@ -12,6 +12,7 @@ int main(){
     std::vector<std::thread> threads;
     for(int i=0; i<10; i++){
         threads.push_back(std::thread(lambda, i));
+        // threads[i].join(); // This creates main::thread holds immediately and blocks all others to join
     }
 
     for(int i=0; i<10; i++){
