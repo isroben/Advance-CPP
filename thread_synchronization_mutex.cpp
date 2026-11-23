@@ -18,7 +18,7 @@ void work(){
     for(int i=0; i<100000; i++){
         m.lock();
         counter++;
-        m.unlock();
+        m.unlock(); // this line releases the lock and allows other threads to accuire resources and progress
     }
 }
 
