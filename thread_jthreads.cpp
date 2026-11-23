@@ -8,10 +8,12 @@ void some(int x){
 }
 
 int main(){
-    std::vector<std::jthread> jthreads;
+    std::vector<std::jthread> jthreads; // jthread uses RAII
     for(int i=0; i<10; i++){
         jthreads.push_back(std::jthread(some, i));
     }
+
+    // destructor = if the thread is joinable, then a stop is requested and the thread joins
 
     return 0;
 }
